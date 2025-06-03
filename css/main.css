@@ -1,142 +1,459 @@
-* {
-    margin: 0;
+*{ /* eliminando marges por defaul tiene los navegadores */
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: #a7e1fa;
+body{
+    background: linear-gradient(to top, white, rgb(243, 60, 60));
+    background-repeat: no-repeat;
+}
+
+.conteiner{    
+    border: 2rem;
+    background-color: lightgray;
+    color: beige;
+    text-align: center;
+}
+
+.conteiner-papa img{
+    text-align: center;
+    width: 100%;
+}
+
+.navbar{
+    background: linear-gradient(to left, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.navbar h3{
+    color: red;
+    font-size: 1.5rem;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+/*ajustar las letras del menu*/
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+
+/*ajustar las letras del menu*/
+.navbar ul li a:hover{
+   background-color: lightblue;
+   padding: .5rem;
+   border-radius: 4px;
+   transition: background-color 0.3s;
+}
+
+/* Team cards styling */
+.team-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-}
-
-.profile-container {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-}
-
-.profile-card {
-    background-color: #e8f4fa;
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.blue-shape {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-color: #6d8dff;
-    border-radius: 50%;
-    right: -50px;
-    top: -50px;
-}
-
-.profile-content {
-    position: relative;
-    z-index: 1;
-}
-
-.profile-header {
-    display: flex;
     gap: 20px;
-    margin-bottom: 20px;
+    padding: 40px 20px;
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-.profile-img {
-    width: 100px;
-    height: 100px;
+.team-card {
+    background-color: white;    
+    border-radius: 10px;
+    padding: 30px 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-card a{
+    text-decoration: none;
+}
+
+.team-card.featured {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid white;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.profile-img img {
+.profile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.profile-info {
-    flex: 1;
+.profile-image.pink {
+    background-color: #ffd1d1;
 }
 
-.profile-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
+.profile-image.gray {
+    background-color: #e0e0e0;
+}
+
+.profile-image.blue {
+    background-color: #c2e0df;
+}
+
+.profile-image.blue img:hover{
+   background-color: red;
+   padding: 0.1rem;
+   border-radius: 4px;
+   transition: background-color 0.3s;
+}
+
+.team-card a:hover{
+    background-color: rgb(248, 236, 236);
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+.member-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
     color: #333;
 }
 
-.profile-handle {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.profile-bio {
+.member-title {
     font-size: 14px;
-    color: #555;
-    line-height: 1.4;
+    color: #777;
+    margin: 5px 0 20px;
 }
 
-.profile-stats {
+.connect-btn {
+    padding: 8px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.connect-btn.outline {
+    background-color: transparent;
+    border: 1px solid #aaa;
+    color: #777;
+}
+
+.connect-btn.filled {
+    background-color: #6c8cff;
+    border: none;
+    color: white;
+}
+
+.connect-btn:hover {
+    opacity: 0.9;
+}
+
+.gallery{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery-title{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-galeria{
+    display: grid;
+    gap: 15px; /* margenes entre imagenes*/
+    grid-template-columns: repeat(3. 1fr); /* diseño */
+    /* hacer dibujo*/
+    grid-template-areas: 
+    "large small1 small2"
+    "large small3 small4"
+    ;
+}
+
+.item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* las puntas de las imagenes redondas*/
+}
+
+.item-1{
+    grid-area: large;
+}
+
+.item-2{
+    grid-area: small1;
+}
+
+.item-3{
+    grid-area: small2;
+}
+
+.item-4{
+    grid-area: small3;
+}
+
+.item-5{
+    grid-area: small4;
+}
+
+.conteiner-foot{
+    background-color: lightgray;
     display: flex;
-    justify-content: flex-start;
-    gap: 40px;
-    margin-bottom: 25px;
-    padding-left: 120px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 
-.stat {
+.conteiner-foot main{
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    width: 450px;
+}
+
+.conteiner-foot h1{
+    font-size: 12px;
+}
+
+.conteiner-foot ul{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+
+.gallery-producto{
+    display: grid;
+    /*grid-template-columns: repeat(4, 1fr);*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-producto{
+    background-color: lightblue;
+    border-radius: 8px;
+    border: 1px solid red;
+    margin: 1rem;
+}
+
+.card-producto img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-producto h2{
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.card-producto p{
+    padding: 0 1rem 1rem 1rem;
+    font-size: 1rem;
+}
+
+.container-form {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+}
+
+.container-form h1 {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
     text-align: center;
 }
 
-.stat h3 {
-    font-size: 18px;
-    font-weight: bold;
+.container-form .form {
+    margin-top: 30px;
+}
+
+.form .input-box {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-box label {
     color: #333;
 }
 
-.stat p {
-    font-size: 14px;
-    color: #666;
+.form :where(.input-box input, .select-box) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
 }
 
-.profile-actions {
+.input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form .column {
     display: flex;
-    gap: 15px;
-    padding-left: 120px;
+    column-gap: 15px;
 }
 
-.btn {
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
+.form .gender-box {
+    margin-top: 20px;
+}
+
+.gender-box h3 {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.form :where(.gender-option, .gender) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    flex-wrap: wrap;
+}
+
+.form .gender {
+    column-gap: 5px;
+}
+
+.gender input {
+    accent-color: rgb(130, 106, 251);
+}
+
+.form :where(.gender input, .gender label) {
+    cursor: pointer;
+}
+
+.gender label {
+    color: #707070;
+}
+
+.address :where(input, .select-box) {
+    margin-top: 15px;
+}
+
+.select-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+}
+
+.form button {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
     cursor: pointer;
     transition: all 0.2s ease;
+    background: rgb(130, 106, 251);
 }
 
-.btn-primary {
-    background-color: #333;
-    color: white;
-    border: none;
+.form button:hover {
+    background: rgb(88, 56, 250);
 }
 
-.btn-outline {
-    background-color: transparent;
-    color: #333;
-    border: 1px solid #ccc;
+@media screen and (max-width: 768px){
+    .conteiner img{
+         width: 75%;
+    }
+
+    .navbar{
+        position: relative;
+    }
+
+    .navbar ul {
+       display: list-item;
+       justify-content: center;
+    }
+
+    .navbar ul li a:hover{
+        background-color: lightblue;
+        padding: 0rem;
+        border-radius: 1px;
+        transition: background-color 0.3s;
+    }
+
+    .navbar ul li a{
+        text-decoration: none;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.0rem;        
+    }   
+
+    .conteiner-papa img{
+        width: 100%;
+    }
+
+    .container-galeria{
+        display: grid;
+        gap: 15px; /* margenes entre imagenes*/
+         grid-template-columns: repeat(1. 1fr); /* diseño */
+        /* hacer dibujo*/
+        grid-template-areas: 
+        "large"
+        "small1"
+        "small2"
+        "small3"
+        "small4"
+        ;
+    }
+
+    .conteiner-foot main img{
+        width: 75%;
+    }
+
+    .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+    
 }
 
-.btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
